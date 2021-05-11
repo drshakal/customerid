@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="        http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd        http://camel.apache.org/schema/spring       https://camel.apache.org/schema/spring/camel-spring.xsd">
+    <bean class="org.apache.camel.component.jpa.JpaComponent" id="jpa">
+        <property name="entityManagerFactory" ref="entityManagerFactory"/>
+        <property name="transactionManager" ref="jpaTxManager"/>
+    </bean>
+    <bean class="org.springframework.orm.jpa.JpaTransactionManager" id="jpaTxManager">
+        <property name="entityManagerFactory" ref="entityManagerFactory"/>
+    </bean>
+    <bean
+        class="org.springframework.orm.jpa.LocalEntityManagerFactoryBean" id="entityManagerFactory">
+        <property name="persistenceUnitName" value="persistenceUnit"/>
+    </bean>
+    <bean
+        class="org.springframework.jdbc.datasource.DriverManagerDataSource" id="mysqltestDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/training03"/>
+        <property name="username" value="root"/>
+        <property name="password" value="rootpassword"/>
+    </bean>
+    <camelContext id="camel" typeConverterStatisticsEnabled="true" xmlns="http://camel.apache.org/schema/spring">
+        <restConfiguration bindingMode="json" component="jetty"
+            host="localhost" port="9095"/>
+        <rest id="rest" path="/api/customer">
+            <get id="rest-id"
+                outType="org.mycompany.models.CustomerID" uri="/id/{id}">
+                <to uri="direct:getCustomer"/>
+            </get>
+        </rest>
+        <route id="getCustomer">
+            <from id="_form1" uri="direct:getCustomer"/>
+            <!--   <to id="_to2" uri="processorClass"/>-->
+            <!--   <log id="_log5" message="::::LOG after processor::::**${header.id}****************************************${body}"/> -->
+            <!--   <toD id="_to6" uri="jpa:org.mycompany.models.CustomerID?nativeQuery= SELECT * FROM training03.customer_id where cid=${header.id}&amp;useExecuteUpdate=false"/>-->
+               <toD id="_to6" uri="jpa:org.mycompany.models.CustomerID?query= select o from org.mycompany.models.CustomerID o where o.cid=${header.id}&amp;useExecuteUpdate=false"/> 
+            <!--   <toD id="_to6" uri="jpa:org.mycompany.DetailsCustomer.CustomerDetails?nativeQuery=${body}&amp;useExecuteUpdate=false"/>-->
+            <!--   <log id="_log6" message="::::LOG::::**${headers}****************************************${body}"/>  -->
+            <to id="_to" uri="mock:out"/>
+        </route>
+    </camelContext>
+</beans>
