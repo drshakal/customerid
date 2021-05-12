@@ -7,7 +7,7 @@
 
         <properties>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" /> <!-- DB Driver -->
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://172.30.86.171:3306/training03?autoReconnect=true&amp;useSSL=false" /> <!-- BD Mane -->
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://http://mysql-customer-detail-service-mesh.apps.ocp4-cluster-002.int.dhdigital.co.in:3306/training03?autoReconnect=true&amp;useSSL=false" /> <!-- BD Mane -->
             <property name="javax.persistence.jdbc.user" value="darkhorse" /> <!-- DB User -->
             <property name="javax.persistence.jdbc.password" value="darkhorse" /> <!-- DB Password -->
 
@@ -18,7 +18,7 @@
             <property name="hibernate.format_sql" value="true" />
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
             <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
-            <property name="hibernate.connection.url" value="jdbc:mysql://172.30.86.171:3306/training03?autoReconnect=true&amp;amp;useSSL=false"/>
+            <property name="hibernate.connection.url" value="jdbc:mysql://http://mysql-customer-detail-service-mesh.apps.ocp4-cluster-002.int.dhdigital.co.in:3306/training03?autoReconnect=true&amp;amp;useSSL=false"/>
             <property name="hibernate.connection.username" value="darkhorse"/>
             <property name="hibernate.connection.password" value="darkhorse"/> <!-- Show SQL formatted -->
         </properties>
