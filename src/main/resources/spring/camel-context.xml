@@ -15,7 +15,7 @@
     <bean
         class="org.springframework.jdbc.datasource.DriverManagerDataSource" id="mysqltestDataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://mysql:3306/training03"/>
+        <property name="url" value="jdbc:mysql://172.30.86.171:3306/training03"/>
         <property name="username" value="darkhorse"/>
         <property name="password" value="darkhorse"/>
     </bean>
