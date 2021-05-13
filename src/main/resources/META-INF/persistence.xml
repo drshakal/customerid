@@ -7,9 +7,9 @@
 
         <properties>
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" /> <!-- DB Driver -->
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://http://mysql-customer-detail-service-mesh.apps.ocp4-cluster-002.int.dhdigital.co.in/training03?autoReconnect=true&amp;useSSL=false" /> <!-- BD Mane -->
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://192.168.10.235:31867/training?autoReconnect=true&amp;useSSL=false" /> <!-- BD Mane -->
             <property name="javax.persistence.jdbc.user" value="root" /> <!-- DB User -->
-            <property name="javax.persistence.jdbc.password" value="rootpassword" /> <!-- DB Password -->
+            <property name="javax.persistence.jdbc.password" value="root" /> <!-- DB Password -->
 
         
             <property name="hibernate.hbm2ddl.auto" value="update" /> <!-- create / create-drop / update -->
@@ -18,9 +18,9 @@
             <property name="hibernate.format_sql" value="true" />
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
             <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
-            <property name="hibernate.connection.url" value="jdbc:mysql://http://mysql-customer-detail-service-mesh.apps.ocp4-cluster-002.int.dhdigital.co.in/training03?autoReconnect=true&amp;amp;useSSL=false"/>
+            <property name="hibernate.connection.url" value="jdbc:mysql://192.168.10.235:31867/training?autoReconnect=true&amp;amp;useSSL=false"/>
             <property name="hibernate.connection.username" value="root"/>
-            <property name="hibernate.connection.password" value="rootpassword"/> <!-- Show SQL formatted -->
+            <property name="hibernate.connection.password" value="root"/> <!-- Show SQL formatted -->
         </properties>
 
     </persistence-unit>
