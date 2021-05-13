@@ -15,9 +15,9 @@
     <bean
         class="org.springframework.jdbc.datasource.DriverManagerDataSource" id="mysqltestDataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://http://mysql-customer-detail-service-mesh.apps.ocp4-cluster-002.int.dhdigital.co.in/training03?autoReconnect=true&amp;useSSL=false"/>
+        <property name="url" value="jdbc:mysql://http://192.168.10.235:31867/training?autoReconnect=true&amp;useSSL=false"/>
         <property name="username" value="root"/>
-        <property name="password" value="rootpassword"/>
+        <property name="password" value="root"/>
     </bean>
     <camelContext id="camel" typeConverterStatisticsEnabled="true" xmlns="http://camel.apache.org/schema/spring">
         <restConfiguration bindingMode="json" component="jetty"
