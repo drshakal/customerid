@@ -2,13 +2,13 @@ start file content + additional
 
 some more content.
 
-new feature ()
+new feature main()
 {
- //code
+ //code main
 }
 
-anather feature ()
+anather feature main()
 {
-  //code
+  //code main
 }
 
