@@ -7,3 +7,8 @@ new feature ()
  //code
 }
 
+anather feature ()
+{
+  //code
+}
+
