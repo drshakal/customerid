@@ -2,12 +2,12 @@ start file content + additional
 
 some more content.
 
-new feature ()
+new feature master()
 {
- //code
+ //code master
 }
 
-anather feature ()
+anather feature master ()
 {
   //code
 }
